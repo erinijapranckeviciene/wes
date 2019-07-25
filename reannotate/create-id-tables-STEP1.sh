@@ -255,5 +255,21 @@ head ${WD}/../annotation-tables/GnomadLofTable
 echo ""
 echo ""
 
+echo ""
+echo " =======================================================================MODIFY cheop.lua and cheop.conf - change pwd to the real path"
+echo ""
+
+## return back from the source data
+cd ..
+## Change the absolute paths in cheop. to the current
+
+changepwd=`pwd | sed "s/\//-SLASH-/g"`
+cat cheop.lua | sed -e "s/pwd/${changepwd}/" | sed "s/-SLASH-/\//g" > cheop.lua.tmp
+mv cheop.lua cheop.lua.1
+mv cheop.lua.tmp cheop.lua
+
+cat cheop.conf | sed -e "s/pwd/${changepwd}/" | sed "s/-SLASH-/\//g" > cheop.conf.tmp
+mv cheop.conf cheop.conf.1
+mv cheop.conf.tmp cheop.conf
 
 

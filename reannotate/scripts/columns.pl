@@ -59,7 +59,7 @@ $colByPosition{$#fields+3}="GNOMAD_link";
 print join("\t",@colToPrint_Part1),"\t";
 
 ## Zygocity - change gts word into zygocity
-for ( grep /\b\Q$gts\E\b/, keys %colByName) { 
+for ( grep /\b\Q$gts\E\b/, sort keys %colByName) { 
   my $zygocity = $_;
   $zygocity=~s/gts/Zygocity/;
   print  $zygocity ,"\t"; }
@@ -67,7 +67,7 @@ for ( grep /\b\Q$gts\E\b/, keys %colByName) {
 print join("\t",@colToPrint_Part2),"\t";
 
 ## Genotypes gts
-for ( grep /\b\Q$gts\E\b/, keys %colByName) { 
+for ( grep /\b\Q$gts\E\b/, sort keys %colByName) { 
   print  $_ ,"\t"; }
 
 print join("\t",@colToPrint_Part3),"\t";
@@ -89,7 +89,7 @@ my %valueByPos;
 
 # add new fields
 my $position=join(":", $valueByPos{$colByName{"Chrom_geminiv"}}, $valueByPos{$colByName{"Pos_geminiv"}});
-my $gnomadl=join("-", $valueByPos{$colByName{"Chrom_geminiv"}}, $valueByPos{$colByName{"Pos_geminiv"}},$valueByPos{$colByName{"Ref_geminiv"}},$valueByPos{$colByName{"Alt_geminiv"}} );
+my $gnomadl=join("-", $valueByPos{$colByName{"Chrom_geminiv"}}, $valueByPos{$colByName{"Pos_geminiv"}},$valueByPos{$colByName{"Ref"}},$valueByPos{$colByName{"Alt"}} );
 
 my $ucsclink='=HYPERLINK("http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&hgt.out3=10x&position='.$position.'","UCSC_link")';
 my $gnomadlink='=HYPERLINK("http://gnomad.broadinstitute.org/variant/'.$gnomadl.'","GNOMAD_link")';
@@ -108,7 +108,7 @@ sub zygocity {
 }
 
 
-for ( grep /\b\Q$gts\E\b/, keys %colByName) { 
+for ( grep /\b\Q$gts\E\b/, sort keys %colByName) { 
 #  print "\n", $_ ,"\n"; 
 #  print $valueByPos{ $colByName{$_} } ,"\n";
   print zygocity($valueByPos{ $colByName{$_} }) ,"\t";
@@ -118,16 +118,16 @@ for ( grep /\b\Q$gts\E\b/, keys %colByName) {
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part2} } ), "\t";
 
 ## Genotypes
-for ( grep /\b\Q$gts\E\b/, keys %colByName) { 
+for ( grep /\b\Q$gts\E\b/, sort keys %colByName) { 
   print $valueByPos{ $colByName{$_} } ,"\t";
 }
 
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part3} } ), "\t";
 
 ## Alt depths comma separated
-print join(",", @valueByPos{ @colByName {( grep /\b\Q$gtaltdepths\E\b/, keys %colByName) } } ), "\t";
+print join(",", @valueByPos{ @colByName {( grep /\b\Q$gtaltdepths\E\b/, sort keys %colByName) } } ), "\t";
 ## Trio covrage, gt depts comma separated
-print join(",", @valueByPos{ @colByName {( grep /\b\Q$gtdepths\E\b/, keys %colByName) } } ), "\t";
+print join(",", @valueByPos{ @colByName {( grep /\b\Q$gtdepths\E\b/, sort keys %colByName) } } ), "\t";
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part4} } ), "\t";
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part5} } ), "\t";
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part6} } ), "\t";
