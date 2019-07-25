@@ -124,10 +124,10 @@ for ( grep /\b\Q$gts\E\b/, sort keys %colByName) {
 
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part3} } ), "\t";
 
-## Alt depths comma separated
-print join(",", @valueByPos{ @colByName {( grep /\b\Q$gtaltdepths\E\b/, sort keys %colByName) } } ), "\t";
-## Trio covrage, gt depts comma separated
-print join(",", @valueByPos{ @colByName {( grep /\b\Q$gtdepths\E\b/, sort keys %colByName) } } ), "\t";
+## Alt depths by ; separated
+print join(";", @valueByPos{ @colByName {( grep /\b\Q$gtaltdepths\E\b/, sort keys %colByName) } } ), "\t";
+## Trio coverage, gt depts by ; separated because excel has its own rules hoe to interpret and transforms numbers
+print join(";", @valueByPos{ @colByName {( grep /\b\Q$gtdepths\E\b/, sort keys %colByName) } } ), "\t";
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part4} } ), "\t";
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part5} } ), "\t";
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part6} } ), "\t";
