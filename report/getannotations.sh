@@ -366,7 +366,7 @@ sqlite3 IDDB.db < ../sql/clean-tables.sql
   echo "This may take up to 20-25 minutes "
   echo ""
 
-sqlite3 IDDB.db < ../sql/gene-names.sql
+#sqlite3 IDDB.db < ../sql/gene-names.sql
 
 
 mv IDDB.db ../
@@ -389,6 +389,11 @@ sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/orphaannot.csv" 
 sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/gnomadconstrannot.csv" "select * from gnomadconstrannot;" ".exit"
 sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/hpo.csv" "select * from hpo;" ".exit"
 sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/gene_names_hpo.csv" "SELECT * FROM genenames_hpo; " ".exit"
+
+## tables with to curate information
+sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/omim2curate.csv" "SELECT * FROM omim2curate7phen3items; " ".exit"
+sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/orpha2curate.csv" "SELECT * FROM  orpha2curateitems34; " ".exit"
+sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/gnomad2curate.csv" "SELECT * FROM  gnomad2curate; " ".exit"
 
 exit
 

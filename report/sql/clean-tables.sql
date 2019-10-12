@@ -400,100 +400,58 @@ select * from orpha2curateitems34 limit 10;
 
 #sqlite> select count(distinct gene_id) from gnomadconstr where gene_id in (select distinct geneid from merged);
 #19704
-# create table to join by symbol so that ensg and entrez qould be covered
+# In gnomad constraint only ENSG are present
+# The gnomad Lof annotations have to be repeated for entrezId 
+# The problem with this database is that for some genes 
+# ensembl_gene_ids with different annotations 
+# correspond to a single entrezID and they have to be grouped
+# First we link gnomad annotations to merged_esg
+# Second we link to this file merged_entrez
+# Then we group by entrez and unite ensg and entrez gnomad lof tables 
+DROP TABLE IF EXISTS merged_ensg;
+CREATE TABLE merged_ensg AS
+ SELECT * FROM  merged WHERE INSTR(geneid,'ENSG')>0;
+
+DROP TABLE IF EXISTS merged_entrez;
+CREATE TABLE merged_entrez AS
+ SELECT * FROM  merged WHERE INSTR(geneid,'ENSG')<1;
+
+DROP TABLE IF EXISTS t11;
+CREATE TABLE t11 AS SELECT * FROM 
+ (SELECT m.*, g.gene, g.oe_lof,g.oe_mis, g.pLI,g.pRec,g.pNull, g.gene_id 
+   FROM merged_ensg m LEFT JOIN gnomadconstr g 
+    ON m.geneid=g.gene_id WHERE LENGTH(g.gene)>0) m 
+  LEFT JOIN merged_entrez e ON m.symbol=e.symbol;
+
+DROP TABLE IF EXISTS t11_ensg;
+CREATE TABLE t11_ensg AS SELECT 
+ DISTINCT symbol, geneid, oe_lof, oe_mis, pLI, pRec, pNull from t11;
+
+DROP TABLE IF EXISTS t11_entrez;
+CREATE TABLE t11_entrez AS SELECT 
+ GROUP_CONCAT(distinct symbol) AS symbol, 
+ "geneid:1" AS geneid, 
+ GROUP_CONCAT(oe_lof) AS oe_lof, 
+ GROUP_CONCAT(oe_mis) AS oe_mis, 
+ GROUP_CONCAT(pLI) AS pLI, 
+ GROUP_CONCAT(pRec) AS pRec, 
+ GROUP_CONCAT(pNull) AS pNull 
+FROM t11 WHERE LENGTH("geneid:1")>0 GROUP BY "geneid:1";
+
 DROP TABLE  IF EXISTS part4;
-CREATE TABLE part4 AS SELECT * FROM merged LEFT JOIN
-   (SELECT m.symbol AS symid , m.geneid AS mgeneid, g.* FROM
-     merged m, gnomadconstr g WHERE mgeneid=g.gene_id) gm ON
-     merged.symbol=gm.symid;
+CREATE TABLE part4 AS 
+ SELECT * FROM t11_ensg 
+  UNION 
+ SELECT * FROM t11_entrez 
+ORDER BY symbol;
 
 select * from part4 limit 10;
-
-#sqlite> .schema part4
-#CREATE TABLE part4(
-#  symbol TEXT,
-#  geneid TEXT,
-#  symid TEXT,
-#  mgeneid TEXT,
-#  gene TEXT,
-#  transcript TEXT,
-#  obs_mis TEXT,
-#  exp_mis TEXT,
-#  oe_mis TEXT,
-#  mu_mis TEXT,
-#  possible_mis TEXT,
-#  obs_mis_pphen TEXT,
-#  exp_mis_pphen TEXT,
-#  oe_mis_pphen TEXT,
-#  possible_mis_pphen TEXT,
-#  obs_syn TEXT,
-#  exp_syn TEXT,
-#  oe_syn TEXT,
-#  mu_syn TEXT,
-#  possible_syn TEXT,
-#  obs_lof TEXT,
-#  mu_lof TEXT,
-#  possible_lof TEXT,
-#  exp_lof TEXT,
-#  pLI TEXT,
-#  pNull TEXT,
-#  pRec TEXT,
-#  oe_lof TEXT,
-#  oe_syn_lower TEXT,
-#  oe_syn_upper TEXT,
-#  oe_mis_lower TEXT,
-#  oe_mis_upper TEXT,
-#  oe_lof_lower TEXT,
-#  oe_lof_upper TEXT,
-#  constraint_flag TEXT,
-#  syn_z TEXT,
-#  mis_z TEXT,
-#  lof_z TEXT,
-#  oe_lof_upper_rank TEXT,
-#  oe_lof_upper_bin TEXT,
-#  oe_lof_upper_bin_6 TEXT,
-#  n_sites TEXT,
-#  classic_caf TEXT,
-#  max_af TEXT,
-#  no_lofs TEXT,
-#  obs_het_lof TEXT,
-#  obs_hom_lof TEXT,
-#  defined TEXT,
-#  p TEXT,
-#  exp_hom_lof TEXT,
-#  classic_caf_afr TEXT,
-#  classic_caf_amr TEXT,
-#  classic_caf_asj TEXT,
-#  classic_caf_eas TEXT,
-#  classic_caf_fin TEXT,
-#  classic_caf_nfe TEXT,
-#  classic_caf_oth TEXT,
-#  classic_caf_sas TEXT,
-#  p_afr TEXT,
-#  p_amr TEXT,
-#  p_asj TEXT,
-#  p_eas TEXT,
-#  p_fin TEXT,
-#  p_nfe TEXT,
-#  p_oth TEXT,
-#  p_sas TEXT,
-#  transcript_type TEXT,
-#  gene_id TEXT,
-#  transcript_level TEXT,
-#  cds_length TEXT,
-#  num_coding_exons TEXT,
-#  gene_type TEXT,
-#  gene_length TEXT,
-#  exac_pLI TEXT,
-#  exac_obs_lof TEXT,
-#  exac_exp_lof TEXT,
-#  exac_oe_lof TEXT,
-#  brain_expression TEXT,
-#  chromosome TEXT,
-#  start_position TEXT,
-#  end_position TEXT
-#);
-
+## Gnomad lof to curate
+DROP TABLE IF EXISTS gnomad2curate;
+CREATE TABLE gnomad2curate AS SELECT gene,
+ gene_id, oe_lof,  oe_mis, pLI,  pRec, pNull FROM gnomadconstr 
+ WHERE gene_id NOT IN (SELECT geneid from part4);
+ 
 ########################################
 # create annotation tables
 ########################################
@@ -556,28 +514,13 @@ select * from orphaannot limit 5;
 #);
 
 DROP TABLE  IF EXISTS gnomadconstrannot;
-CREATE TABLE gnomadconstrannot AS SELECT 
-   symbol, 
-   geneid, 
-   oe_lof, 
-   oe_mis, 
-   pLI,
-   pNull, 
-   pRec FROM part4 WHERE oe_lof>0;
+CREATE TABLE gnomadconstrannot AS 
+ SELECT * FROM  part4; 
 
 .schema gnomadconstrannot
 select * from gnomadconstrannot limit 5;
 
-#sqlite> .schema gnomadconstrannot
-#CREATE TABLE gnomadconstrannot(
-#  symbol TEXT,
-#  geneid TEXT,
-#  oe_lof TEXT,
-#  oe_mis TEXT,
-#  pLI TEXT,
-#  pNull TEXT,
-#  pRec TEXT
-#);
+
 
 DROP TABLE IF EXISTS history;
 CREATE TABLE history AS SELECT * FROM part1 WHERE
@@ -625,3 +568,11 @@ select * from history limit 5;
 #.output gnomadconstrannot.csv
 #select * from gnomadconstrannot;
 
+#.output omim2curate.csv
+#select * from omim2curate7phen3items;
+
+#.output orpha2curate.csv
+#select * from orpha2curateitems34;
+
+#.output gnomad2curate.csv
+#select * from gnomad2curate;
