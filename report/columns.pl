@@ -2,6 +2,7 @@
 # This script selectively prints report columns from the query 
 #
 use strict; 
+use List::Util qw(max);
 #use warnings;
 
 my %colByName;
@@ -10,27 +11,25 @@ my $linecount=1;
 
 my @colToPrint_Part1=("Position","UCSC_link","GNOMAD_link","Ref","Alt");
 ## then zygocity
-my @colToPrint_Part2=("Gene","Burden");
-## then Burden 
+my @colToPrint_Part2=("Gene");
+## then burden  
 ## then gts
 my @colToPrint_Part3=("Variation","Info","Refseq_change","Depth","Quality");
 ## then alt_depth
 ## then trio_coverage
-my @colToPrint_Part4=("GeneIDv","Gene_name","Omim_gene","Orpha","Clinvar");
-my @colToPrint_Part5=("Gnomad_af_popmax_noother_cheo","Gnomad_af_cheo","Gnomad_ac_cheo","Gnomad_an_cheo","Gnomad_hom");
+my @colToPrint_Part4=("GeneIDv","Gene_description","Omim_gene","Orpha","Clinvar");
+my @colToPrint_Part5=("Gnomad_af_popmax_noother","Gnomad_af","Gnomad_ac","Gnomad_an","Gnomad_hom");
 my @colToPrint_Part6=("Ensembl_transcript_id","AA_position","Exon","Protein_domains","rsIDs");
-my @colToPrint_Part7=("oe_lof","oe_mis","pLI","pRec","pNull","Conserved_in_20_mammals_dbnsfp","Sift_score","Polyphen_score","Cadd_score_dbnsfp");
-my @colToPrint_Part8=("Vest3_score_dbnsfp","Revel_score_dbnsfp","Gerp_score_dbnsfp","Maxentscan_diff","Callers","Old_multiallelic");
-my @colToPrint_Part9=("VType","Impact_severity","Symbol_source","Hugo_entrez","Hugo_ensg","Hugo_symbol","hpo_entrez","hpo_symbol","variant_id");
-
+my @colToPrint_Part7=("oe_lof","oe_mis","pLI","pRec","pNull","Conserved_in_20_mammals","Sift_score","Polyphen_score","Cadd_score");
+my @colToPrint_Part8=("Vest3_score");
+my @colToPrint_Part9=("Revel_score","Gerp_score","Splicing","Callers");
+my @colToPrint_Part10=("Num_of_callers");
+my @colToPrint_Part11=("Old_multiallelic","VType","Impact_severity","Symbol_source","Hugo_entrez","Hugo_ensg","Hugo_symbol","hpo_entrez","hpo_symbol","variant_id");
 
 my $gts="gts";
 my $gtaltdepths="gt_alt_depths";
 my $gtdepths="gt_depths";
-
-##  Possibly change the header fields/ TO DO Later /
-#my @colNameToPrint=("Position","UCSC_Link","GNOMAD_Link","Ref","Alt","Gene");
-
+my $burden="burden";
 
 while(<>)
 { chop;
@@ -68,10 +67,11 @@ for ( grep /\b\Q$gts\E\b/, sort keys %colByName) {
   print  $zygocity ,"\t"; }
 
 ## After Zygocity goes Gene and Burden
+print join("\t",@colToPrint_Part2),"\t"; # Part2 is VEP assigned Gene
 
-
-
-print join("\t",@colToPrint_Part2),"\t";
+## Burden burden
+for ( grep /\b\Q$burden\E\b/, sort keys %colByName) { 
+  print  $_ ,"\t"; }
 
 ## Genotypes gts
 for ( grep /\b\Q$gts\E\b/, sort keys %colByName) { 
@@ -85,8 +85,17 @@ print join("\t",@colToPrint_Part4),"\t";
 print join("\t",@colToPrint_Part5),"\t";
 print join("\t",@colToPrint_Part6),"\t";
 print join("\t",@colToPrint_Part7),"\t";
+
+
+## Here is Vest3 score
 print join("\t",@colToPrint_Part8),"\t";
-print join("\t",@colToPrint_Part9),"\n";
+
+print join("\t",@colToPrint_Part9),"\t";
+
+## Here is number of callers from Callers column
+print join("\t",@colToPrint_Part10),"\t";
+
+print join("\t",@colToPrint_Part11),"\n";
 
 }
 
@@ -97,8 +106,8 @@ my %valueByPos;
 @valueByPos{(0..$#fields)}=@fields;
 
 # add new fields
-my $position=join(":", $valueByPos{$colByName{"Chrom_geminiv"}}, $valueByPos{$colByName{"Pos_geminiv"}});
-my $gnomadl=join("-", $valueByPos{$colByName{"Chrom_geminiv"}}, $valueByPos{$colByName{"Pos_geminiv"}},$valueByPos{$colByName{"Ref"}},$valueByPos{$colByName{"Alt"}} );
+my $position=join(":", $valueByPos{$colByName{"Chrom"}}, $valueByPos{$colByName{"Pos"}});
+my $gnomadl=join("-", $valueByPos{$colByName{"Chrom"}}, $valueByPos{$colByName{"Pos"}},$valueByPos{$colByName{"Ref"}},$valueByPos{$colByName{"Alt"}} );
 
 my $ucsclink='=HYPERLINK("http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&hgt.out3=10x&position='.$position.'","UCSC_link")';
 my $gnomadlink='=HYPERLINK("http://gnomad.broadinstitute.org/variant/'.$gnomadl.'","GNOMAD_link")';
@@ -124,7 +133,13 @@ for ( grep /\b\Q$gts\E\b/, sort keys %colByName) {
   
 }
 
+## Here gene assigned by VEP
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part2} } ), "\t";
+
+## Burden
+for ( grep /\b\Q$burden\E\b/, sort keys %colByName) { 
+  print $valueByPos{ $colByName{$_} } ,"\t";
+}
 
 ## Genotypes
 for ( grep /\b\Q$gts\E\b/, sort keys %colByName) { 
@@ -141,8 +156,19 @@ print join("\t", @valueByPos{ @colByName{@colToPrint_Part4} } ), "\t";
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part5} } ), "\t";
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part6} } ), "\t";
 print join("\t", @valueByPos{ @colByName{@colToPrint_Part7} } ), "\t";
-print join("\t", @valueByPos{ @colByName{@colToPrint_Part8} } ), "\t";
-print join("\t", @valueByPos{ @colByName{@colToPrint_Part9} } ), "\n";
+
+## Vest3 score - max of three values 
+my $Vest3 = max split(",", @valueByPos{ @colByName{@colToPrint_Part8} });
+print $Vest3, "\t";
+
+print join("\t", @valueByPos{ @colByName{@colToPrint_Part9} } ), "\t";
+
+## Num_of_callers - number of callers that made a call
+## Uses Callers column to compute the length of the array
+print join("\t", scalar split(",", @valueByPos{ @colByName{"Callers"} } )), "\t";
+
+## Aditional fields that come from Hugo
+print join("\t", @valueByPos{ @colByName{@colToPrint_Part11} } ), "\n";
 
 
 }

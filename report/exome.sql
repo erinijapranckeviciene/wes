@@ -1,6 +1,6 @@
 ############################################################
 # Th sql script to organize tables for the report 
-# and link gene level external annotations
+# and link gene level external /home/erinija/cheo/report/annotations
 ###########################################################
 # Variant impacts are decribed here
 # https://useast.ensembl.org/info/genome/variation/prediction/predicted_data.html
@@ -80,19 +80,9 @@ select "";
 
 select * from filtered_variants2 limit 2;
 
-# CREATE BURDEN column in tb
-DROP TABLE IF EXISTS tb;
-CREATE TABLE tb AS SELECT * FROM 
- (SELECT Gene as GB, 
-         COUNT(Gene) AS Burden 
- FROM filtered_variants2 
- WHERE LENGTH(Gene) > 0 GROUP BY Gene);
+# BURDEN columnis created externally
 
-select "Burden column";
-select * from tb limit 2;
-select "";
-
-# CREATE ensembl gene column to make left joins with gene level annotations
+# CREATE ensembl gene column to make left joins with gene level /home/erinija/cheo/report/annotations
 DROP TABLE IF EXISTS t0;
 CREATE TABLE t0 AS SELECT 
  DISTINCT GeneIDv AS GeneID 
@@ -107,7 +97,7 @@ select "";
 # imported tables get appended, 
 #so it is necessary to drop the table before importing
 DROP TABLE IF EXISTS omim;
-.import annotations/omimannot.csv omim
+.import /home/erinija/cheo/report/annotations/omimannot.csv omim
 
 DROP TABLE IF EXISTS t1;
 DROP TABLE IF EXISTS omim1;
@@ -126,7 +116,7 @@ select * from t1 where length(gphenotypes)>1 limit 2;
 select "";
 
 DROP TABLE IF EXISTS orpha;
-.import annotations/orphaannot.csv orpha
+.import /home/erinija/cheo/report/annotations/orphaannot.csv orpha
 
 DROP TABLE IF EXISTS t2;
 DROP TABLE IF EXISTS orpha1;
@@ -146,7 +136,7 @@ select * from t2 where length(disorders)>1 limit 2;
 select "";
 
 DROP TABLE IF EXISTS gnomadconstr;
-.import annotations/gnomadconstrannot.csv gnomadconstr
+.import /home/erinija/cheo/report/annotations/gnomadconstrannot.csv gnomadconstr
 
 DROP TABLE IF EXISTS t3;
 CREATE TABLE t3 AS SELECT 
@@ -161,7 +151,7 @@ select * from t3 limit 2;
 select "";
 
 DROP TABLE IF EXISTS genenames;
-.import annotations/gene_names_hpo.csv genenames
+.import /home/erinija/cheo/report/annotations/gene_names_hpo.csv genenames
 
 DROP TABLE IF EXISTS t4;
 CREATE TABLE t4 AS SELECT DISTINCT 
@@ -174,7 +164,7 @@ CREATE TABLE t4 AS SELECT DISTINCT
    pLI, 
    pNull, 
    pRec, 
-   hugo_description AS Gene_name, 
+   hugo_description AS Gene_description, 
    hugo_entrez AS Hugo_entrez, 
    hugo_ensg AS Hugo_ensg, 
    hugo_symbol AS Hugo_symbol,
@@ -188,14 +178,31 @@ select "";
 
 ## Left join with filtered variants
 DROP TABLE IF EXISTS report0;
-CREATE TABLE report0 AS SELECT 
- DISTINCT * FROM filtered_variants2 v LEFT JOIN t4 o ON v.GeneIDv=o.GeneID;
-
-## ADD BURDEN column
 DROP TABLE IF EXISTS exome;
-CREATE TABLE exome AS SELECT  
- DISTINCT * FROM report0 v LEFT JOIN tb o ON v.Gene=o.GB;
+CREATE TABLE exome AS SELECT 
+ DISTINCT * FROM filtered_variants2 v LEFT JOIN t4 o ON v.GeneIDv=o.GeneID;
 
 select "Final exome table";
 select * from exome limit 2;
 
+## Clean created extra tables
+
+drop table if exists filtered_impacts1;
+drop table if exists filtered_variants1;
+drop table if exists filtered_variants2;
+drop table if exists genenames;
+drop table if exists gnomadconstr;
+drop table if exists mpgenes;
+drop table if exists report0;
+drop table if exists t0;
+drop table if exists t1;
+drop table if exists t2;
+drop table if exists t3;
+drop table if exists t4;
+drop table if exists tb;
+drop table if exists t10;
+drop table if exists t11;
+drop table if exists omim;
+drop table if exists omim1;
+drop table if exists orpha;
+drop table if exists orpha1;
