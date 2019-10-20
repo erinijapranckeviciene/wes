@@ -7,8 +7,7 @@ dbfile=$1
 #Query table
 table="exome"
 
-#reportdir=/projects/analysis/report
-reportdir=/home/erinija/cheo/report
+reportdir=/projects/analysis/report
 
 tmpdir=`pwd`/tmp
 if [ ! -d ${tmpdir} ]; then
@@ -64,12 +63,15 @@ do
  echo $c
  cut -f1,$c ${tmpdir}/b.tmp | grep gts > ${tmpdir}/bheader.tmp
  cut -f1,$c ${tmpdir}/b.tmp | grep -v gts | grep -v "[.]/[.]"| cut -f1 | sort -k1,1 | uniq -c | awk '{print $2 "\t" $1}'  >  ${tmpdir}/bbody.tmp
- cat ${tmpdir}/bheader.tmp ${tmpdir}/bbody.tmp > ${tmpdir}/bc.tmp
-head -n2  ${tmpdir}/bc.tmp
-wc ${tmpdir}/bc.tmp
-# do left join with burden 
-join --header -a 1  -1 1 -2 1 ${tmpdir}/v.tmp ${tmpdir}/bc.tmp | tr " " "\t" > ${tmpdir}/intermed.tmp
-mv ${tmpdir}/intermed.tmp ${tmpdir}/v.tmp
+ cat ${tmpdir}/bheader.tmp ${tmpdir}/bbody.tmp > ${tmpdir}/bc${c}.tmp
+head -n2  ${tmpdir}/bc${c}.tmp
+wc ${tmpdir}/bc${c}.tmp
+# do left join with burden,
+# empty places are filled with NA
+# if absence of variant leads  
+# to the absence of gene identifier
+join --header -a 1  -1 1 -2 1 ${tmpdir}/v.tmp ${tmpdir}/bc${c}.tmp | tr " " "\t"  | tr " " "\t" | awk -v col=$c '{if (NF<col){ print $0"\t" "NA"} else { print $0}}' > ${tmpdir}/intermed${c}.tmp
+cp ${tmpdir}/intermed${c}.tmp ${tmpdir}/v.tmp
 
 head ${tmpdir}/v.tmp
 done
@@ -100,8 +102,4 @@ echo ""
 sqlite3 $dbfile "drop table if exists ${table}b;"
 sqlite3 $dbfile "drop table if exists ${table};"
 sqlite3 $dbfile "drop table if exists burden;"
-
-
-
-
 
