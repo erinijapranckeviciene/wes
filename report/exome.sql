@@ -1,6 +1,6 @@
 ############################################################
 # Th sql script to organize tables for the report 
-# and link gene level external /home/erinija/cheo/report/annotations
+# and link gene level external /projects/analysis/report/annotations
 ###########################################################
 # Variant impacts are decribed here
 # https://useast.ensembl.org/info/genome/variation/prediction/predicted_data.html
@@ -82,7 +82,7 @@ select * from filtered_variants2 limit 2;
 
 # BURDEN columnis created externally
 
-# CREATE ensembl gene column to make left joins with gene level /home/erinija/cheo/report/annotations
+# CREATE ensembl gene column to make left joins with gene level /projects/analysis/report/annotations
 DROP TABLE IF EXISTS t0;
 CREATE TABLE t0 AS SELECT 
  DISTINCT GeneIDv AS GeneID 
@@ -97,7 +97,7 @@ select "";
 # imported tables get appended, 
 #so it is necessary to drop the table before importing
 DROP TABLE IF EXISTS omim;
-.import /home/erinija/cheo/report/annotations/omimannot.csv omim
+.import /projects/analysis/report/annotations/omimannot.csv omim
 
 DROP TABLE IF EXISTS t1;
 DROP TABLE IF EXISTS omim1;
@@ -116,7 +116,7 @@ select * from t1 where length(gphenotypes)>1 limit 2;
 select "";
 
 DROP TABLE IF EXISTS orpha;
-.import /home/erinija/cheo/report/annotations/orphaannot.csv orpha
+.import /projects/analysis/report/annotations/orphaannot.csv orpha
 
 DROP TABLE IF EXISTS t2;
 DROP TABLE IF EXISTS orpha1;
@@ -136,7 +136,7 @@ select * from t2 where length(disorders)>1 limit 2;
 select "";
 
 DROP TABLE IF EXISTS gnomadconstr;
-.import /home/erinija/cheo/report/annotations/gnomadconstrannot.csv gnomadconstr
+.import /projects/analysis/report/annotations/gnomadconstrannot.csv gnomadconstr
 
 DROP TABLE IF EXISTS t3;
 CREATE TABLE t3 AS SELECT 
@@ -151,7 +151,7 @@ select * from t3 limit 2;
 select "";
 
 DROP TABLE IF EXISTS genenames;
-.import /home/erinija/cheo/report/annotations/gene_names_hpo.csv genenames
+.import /projects/analysis/report/annotations/gene_names_hpo.csv genenames
 
 DROP TABLE IF EXISTS t4;
 CREATE TABLE t4 AS SELECT DISTINCT 

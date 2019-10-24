@@ -1,0 +1,9 @@
+Chromosome	Genomic_Position_Start	Genomic_Position_End	Cyto_Location	Computed_Cyto_Location	Mim_Number	Gene_Symbols	Gene_Name	Approved_Symbol	Entrez_Gene_ID	Ensembl_Gene_ID	Comments	Phenotypes	Mouse_Gene_Symbol/ID
+chr1	3772760	3775981	1p36	1p36.32	615242	SMIM1,_VEL	Small_integral_membrane_protein_1	SMIM1	388588	ENSG00000235169		[Blood_group,_Vel_system],_615264_(3),_Autosomal_recessive	Smim1_(MGI:1916109)
+chr3	161000000	183000000	3q26		600049	MDS1	Myelodysplasia_syndrome-1				cen--EVI1--MDS1--EAP--tel	Myelodysplasia_syndrome-1_(3)	
+chr6	98900000	100000000	6q16.2		616842	DHS6S1,_MCDR1	DNase1_hypersensitivity,_chromosome_6,_site_1		107305681		upstream_of_PRDM13_and_CCNC	Macular_dystrophy,_North_Carolina_type,_136550_(3),_Autosomal_dominant	
+chr11	1998744	2003508	11p15.5	11p15.5	616186	ICR1	H19-IGF2-imprinting_control_region		105259599			Beckwith-Wiedemann_syndrome,_130650_(3),_Autosomal_dominant	
+chr11	5269924	5304185	11p15.5	11p15.4	152424	LCRB	Locus_control_region_beta		109580095			Thalassemia,_Hispanic_gamma-delta-beta,_613985_(3)	
+chr13	54700000	72800000	13q21		613289	ATXN8	Ataxin_8	ATXN8	724066		CAG_repeat_results_in_polyglutamine_expansion_protein	Spinocerebellar_ataxia_8,_608768_(3),_Autosomal_dominant	
+chr20	28100000	64444167	20q11-q13		617352	MBCS	Mulchandani-Bhoj-Conlin_syndrome				maternal_uniparental_disomy_of_imprinted_region	Mulchandani-Bhoj-Conlin_syndrome,_617352_(3)	
+chrX	0	6100000	Xpter-p22.32		314700	XG	Xg_blood_group				nonlyonizing,_spans_pseudoautosomal_boundary,_XGPY_on_Yq11.21	[Blood_group,_XG_system]_(3)	

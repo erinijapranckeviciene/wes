@@ -407,6 +407,9 @@ sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/gnomadconstranno
 sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/hpo.csv" "select * from hpo;" ".exit"
 sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/gene_names_hpo.csv" "SELECT * FROM genenames_hpo; " ".exit"
 
+## myoslice identifiers
+sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/myosliceid.csv" "SELECT * FROM myosliceids; " ".exit"
+
 ## tables with to curate information
 sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/omim2curate.csv" "SELECT * FROM omim2curate7phen3items; " ".exit"
 sqlite3 IDDB.db ".mode tabs" ".headers on" ".output annotations/orpha2curate.csv" "SELECT * FROM  orpha2curateitems34; " ".exit"
