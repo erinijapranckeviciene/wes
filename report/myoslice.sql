@@ -14,23 +14,52 @@ DROP TABLE IF EXISTS myosliceid;
 
 
 ## For myoslice report filter the genes first 
-DROP TABLE IF EXISTS filtered_genes;
-CREATE TABLE filtered_genes AS SELECT * FROM variants WHERE 
+DROP TABLE IF EXISTS filtered_genes1;
+CREATE TABLE filtered_genes1 AS SELECT * FROM variants WHERE 
   ensembl_gene_id IN (SELECT DISTINCT entrez FROM myosliceid) OR
   ensembl_gene_id IN (SELECT DISTINCT ensg FROM myosliceid) ; 
 
-SELECT "Total myoslice variants",count(*) FROM filtered_genes;
 
+## Mark the transcript 
+## whether it is a transcript 
+## of interest
+DROP TABLE IF EXISTS filtered_genes2;
+CREATE TABLE filtered_genes2 AS SELECT 
+  *,
+  CASE WHEN (transcript IN 
+    (SELECT enst FROM myosliceid) OR 
+     transcript IN (SELECT hgmdnm FROM myosliceid)) 
+       THEN transcript END AS  mainenst
+  FROM filtered_genes1;
+
+
+
+SELECT "Total myoslice variants",count(*) FROM filtered_genes2;
+SELECT mainenst FROM filtered_genes2 where length(mainenst)>1;
+## filtered_genes2 has column mainenst showing
+## whether the transcript a transcript of interest
+
+
+
+## in impacts we have to add the column marking
+## the transcript
 
 DROP TABLE IF EXISTS filtered_impacts1;
-CREATE TABLE filtered_impacts1 AS SELECT * FROM variant_impacts WHERE 
+CREATE TABLE filtered_impacts1 AS SELECT 
+ *,
+  CASE WHEN ( transcript IN 
+    (SELECT enst FROM myosliceid) OR 
+    transcript IN (SELECT hgmdnm FROM myosliceid)) 
+       THEN transcript END AS  infoenst
+  FROM variant_impacts WHERE 
   impact_so NOT IN ('non_coding_transcript_exon_variant','downstream_gene_variant','upstream_gene_variant','intergenic_variant');
 
 SELECT "Filtered impacts ",count(*) from filtered_impacts1;
 SELECT "";
 
+
 DROP TABLE IF EXISTS filtered_variants1;
-CREATE TABLE filtered_variants1 AS SELECT * FROM filtered_genes WHERE 
+CREATE TABLE filtered_variants1 AS SELECT * FROM filtered_genes2 WHERE 
  impact_so NOT IN ('non_coding_transcript_exon_variant','downstream_gene_variant','upstream_gene_variant','intergenic_variant');
 
 SELECT "Filtered myoslice variants ",count(*) from filtered_variants1;
@@ -74,6 +103,8 @@ CREATE TABLE filtered_variants2 AS SELECT
         v.aa_change AS AA_change,
         v.old_multiallelic AS Old_multiallelic,
         CAST(COUNT(*) AS INT) AS total_number_of_variant_impacts_in_gemini,
+        GROUP_CONCAT( DISTINCT i.infoenst) AS Infoenst, 
+        v.mainenst AS Mainenst,
         GROUP_CONCAT( DISTINCT ( '[' || i.impact_severity || ';' || i.impact_so || ';' || i.Gene || ';Exon:' || i.exon || ';' || i.hgvsc || ';' || i.hgvsp || ']' ) ) as Info,
         SUBSTR(GROUP_CONCAT(DISTINCT (CASE WHEN INSTR(i.hgvsc, 'NM') THEN i.hgvsc ELSE '' END ) ), 2) AS Refseq_change,
         v.callers AS Callers,
@@ -201,6 +232,9 @@ select "Final myoslice table";
 select * from myoslice limit 2;
 
 ## Clean created extra tables
+drop table if exists filtered_genes;
+drop table if exists filtered_genes1;
+drop table if exists filtered_genes2;
 
 drop table if exists filtered_impacts1;
 drop table if exists filtered_variants1;

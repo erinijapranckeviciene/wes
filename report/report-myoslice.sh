@@ -89,7 +89,7 @@ rm -rf ${tmpdir}  burden.csv
 
 
 echo "Main query table myoslice" 
-gemini query --header -q "select t.*,(gts).(*),(gt_alt_depths).(*),(gt_depths).(*) from ${table}b t, variants v where t.variant_id=v.variant_id" $dbfile | uniq| perl ${reportdir}/columns.pl | grep -v discontinued | sed -e 's/"/""/g' -e 's/^\|$/"/g' -e 's/\t/","/g'  > $dbfile.${table}.csv
+gemini query --header -q "select t.*,(gts).(*),(gt_alt_depths).(*),(gt_depths).(*) from ${table}b t, variants v where t.variant_id=v.variant_id" $dbfile | uniq| perl ${reportdir}/columns-myoslice.pl |  sed -e 's/"/""/g' -e 's/^\|$/"/g' -e 's/\t/","/g'  > $dbfile.${table}.csv
 # test 
 echo "Report two lines"
 head -n2 $dbfile.${table}.csv
