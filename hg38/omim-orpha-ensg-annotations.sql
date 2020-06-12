@@ -37,13 +37,13 @@ CREATE TABLE annosource AS SELECT
   Association_status as Orpha_assocstatus, 
   Ensembl_gene_identifier as ENSG, 
   RNA_nucleotide_accession as NM, 
-  Ensembl_rna_identifier as ENST 
+  SUBSTR(Ensembl_rna_identifier,1,15) as ENST 
 FROM ginfoomimorphaens;
 
 DROP TABLE IF EXISTS annosourceentrez;
 CREATE TABLE annosourceentrez AS SELECT 
  ID, 
- GeneID, 
+ GeneID as gid, 
  Symbol, 
  description, 
  MIM_number, 
@@ -52,6 +52,8 @@ CREATE TABLE annosourceentrez AS SELECT
  Orpha_number, 
  Orpha_association, 
  Orpha_assocstatus, 
+ ENSG as ENSG,
+ GeneID as ENTREZ,
  NM, 
  ENST 
 FROM annosource;
@@ -59,7 +61,7 @@ FROM annosource;
 DROP TABLE IF EXISTS annosourceensg;
 CREATE TABLE annosourceensg AS SELECT 
  ID, 
- ENSG as GeneID, 
+ ENSG as gid, 
  Symbol, 
  description, 
  MIM_number, 
@@ -68,6 +70,8 @@ CREATE TABLE annosourceensg AS SELECT
  Orpha_number, 
  Orpha_association, 
  Orpha_assocstatus, 
+ ENSG as ENSG,
+ GeneID as ENTREZ,
  NM, 
  ENST 
 FROM annosource;
@@ -86,7 +90,7 @@ SELECT * FROM annosourceensg;
 .headers on
 .out omim-orpha-ensg-annotations.csv
 SELECT rowid as NUM, 
-       GeneID, 
+       gid as GeneID, 
        Symbol, 
        description as Description, 
        MIM_Number as MIM, 
@@ -95,6 +99,8 @@ SELECT rowid as NUM,
        Orpha_number, 
        Orpha_association, 
        Orpha_assocstatus, 
+       ENSG,
+       ENTREZ,
        NM, 
        ENST 
 FROM annottmp WHERE NOT INSTR(Symbol,"Sym") ORDER BY ID;

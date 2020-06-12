@@ -9,8 +9,8 @@
 ## Concatenate all variant effects
 DROP TABLE IF EXISTS grouped_impacts;
 CREATE TABLE grouped_impacts AS select variant_id, COUNT(variant_id) AS Variant_impacts_num, GROUP_CONCAT( distinct ( '[' || gene || ';' || impact_so || ';' || impact_severity || ';' || hgvsc || ';' || hgvsp || ']')) AS Grouped_variant_impacts FROM variant_impacts GROUP BY variant_id;
-SELECT "grouped_impacts ", COUNT(*) FROM grouped_impacts; 
-SELECT "";
+#SELECT "grouped_impacts ", COUNT(*) FROM grouped_impacts; 
+#SELECT "";
 
 
 ## Select fields into the report
@@ -171,27 +171,69 @@ CREATE TABLE variant_fields AS SELECT
         g.Grouped_variant_impacts FROM variants v, grouped_impacts g WHERE 
              v.variant_id=g.variant_id;
 
-select "Variant fields ",count(*) from variant_fields;
-select "";
+#select "Variant fields ",count(*) from variant_fields;
+#select "";
 
 
 # Join fields with variants
 DROP TABLE IF EXISTS variant_fields_gts;
 CREATE TABLE variant_fields_gts AS SELECT g.*, v.* FROM genotypes g, variant_fields v where g.variant_id=v.variant_id;
 
-# To avoid duplications we will need to group/aggregate OMIMand Orpha diseases into one line 
+# Select gene IDs that are from variant table.
+DROP TABLE IF EXISTS vgenes;
+CREATE TABLE vgenes as SELECT distinct VGeneID from variant_fields_gts;
+
+# Join VGeneID with gene level annotations
+DROP TABLE IF EXISTS gl_annotations;
+CREATE TABLE gl_annotations AS SELECT v.VGeneID,gl.* 
+  FROM vgenes v LEFT JOIN genelevel gl ON v.VGeneID=gl.GeneID; 
+
+#select * from gl_annotations limit 5;
+
+DROP TABLE IF EXISTS gl_annotations_grouped;
+CREATE TABLE gl_annotations_grouped AS SELECT VGeneID,
+  GROUP_CONCAT( DISTINCT (Description)) AS Gene_description,
+  GROUP_CONCAT( DISTINCT (ENTREZ)) AS ENTREZ,
+  GROUP_CONCAT( DISTINCT ('[' || MIM || ';' || OMIM_Phenotypes || ']' )) AS OMIM,
+  GROUP_CONCAT( DISTINCT ('[' || Orpha_number || ';' || Orpha_disorder || ';' || Orpha_association || ']' )) AS ORPHA
+FROM gl_annotations GROUP BY GeneID;
+
+#select * from gl_annotations_grouped limit 5;
+
+# The grouped gene level annotations join with variant_fields
+
 DROP TABLE IF EXISTS variant_fields_gts_genelevel;
 CREATE TABLE variant_fields_gts_genelevel AS SELECT v.*, gl.* 
-  FROM  variant_fields_gts v LEFT JOIN genelevel gl ON v.VGeneID=gl.GeneID;
+  FROM  variant_fields_gts v 
+    LEFT JOIN gl_annotations_grouped gl ON v.VGeneID=gl.VGeneID;
+
+# Add NM
+DROP TABLE IF EXISTS enst;
+CREATE TABLE enst as SELECT DISTINCT Ensembl_transcript_id as vENST FROM  variant_fields_gts_genelevel;
+
+DROP TABLE IF EXISTS enst_nm;
+CREATE TABLE enst_nm as SELECT e.vENST, gl.NM 
+ FROM enst e LEFT JOIN genelevel gl ON e.vENST=gl.ENST;
+
+DROP TABLE IF EXISTS variant_fields_gts_genelevel_nm;
+CREATE TABLE variant_fields_gts_genelevel_nm AS SELECT v.*, e.NM 
+  FROM  variant_fields_gts_genelevel v LEFT JOIN enst_nm e ON v.Ensembl_transcript_id=e.vENST;
 
 .mode tabs
 .headers on
 
-SELECT * from variant_fields_gts_genelevel;
+## Select fields in a proper order TODO 
+## ( for sample names - how to pass a sample name to the SQL script)
+SELECT DISTINCT * from variant_fields_gts_genelevel_nm;
+
 
 #drop table if exists grouped_impacts;
 #drop table if exists variant_fields;
 #drop table if exists variant_fields_gts;
 #drop table if exists variant_fields_gts_genelevel;
+#drop table if exists vgenes;
+#drop table if exists gl_annotations;
+#drop table if exists gl_annotations_grouped;
+
 #drop table if exists genotypes;
 #drop table if exists genelevel;
