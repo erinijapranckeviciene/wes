@@ -1,168 +1,168 @@
-     1	variant_id	1311	22498
-     2	gts.18M14M	C/T	G/G
-     3	gt_types.18M14M	1	3
-     4	gt_phases.18M14M	0	0
-     5	gt_depths.18M14M	184	115
-     6	gt_ref_depths.18M14M	106	0
-     7	gt_alt_depths.18M14M	78	115
-     8	gt_quals.18M14M	99.0	99.0
-     9	gt_alt_freqs.18M14M	0.42391304347826086	1.0
-    10	variant_id:1	1311	22498
-    11	Chrom	chr1	chrX
-    12	Start	156137743	154532439
-    13	End	156137744	154532440
-    14	RS	rs4641	rs2230037
-    15	Ref	C	A
-    16	Alt	T	G
-    17	Quality	2215.80004882812	3834.80004882812
-    18	Filter		
-    19	VType	snp	snp
-    20	VSubType	ts	ts
-    21	Call_rate	1.0	1.0
-    22	Num_hom_ref	0	0
-    23	Num_het	1	0
-    24	Num_hom_alt	0	1
-    25	Num_unknown	0	0
-    26	Gene	LMNA	G6PD
-    27	VGeneID	ENSG00000160789	ENSG00000160211
-    28	Ensembl_transcript_id	ENST00000368299	ENST00000369620
-    29	IS_exonic	0	1
-    30	IS_coding	0	1
-    31	IS_lof	0	0
-    32	IS_splicing	1	0
-    33	IS_canonical	0	0
-    34	Exon	10_12	11_13
-    35	Codon_change	caC_caT	taT_taC
-    36	AA_change	H	Y
-    37	AA_length	566_614	483_561
-    38	Biotype	protein_coding	protein_coding
-    39	Impact	splice_region_variant	synonymous_variant
-    40	Impact_so	splice_region_variant	synonymous_variant
-    41	Impact_severity	MED	LOW
-    42	Polyphen_pred		
-    43	Polyphen_score		
-    44	Sift_pred		
-    45	Sift_score		
-    46	Ancestral_allele		
-    47	Cadd_phred		
-    48	Cadd_raw		
-    49	Cadd_raw_rankscore		
-    50	Dann_rankscore		
-    51	Dann_score		
-    52	Eigen_pc_phred		
-    53	Eigen_pc_raw		
-    54	Eigen_pc_raw_rankscore		
-    55	Eigen_phred		
-    56	Eigen_raw		
-    57	Eigen_coding_or_noncoding		
-    58	Ensembl_geneid		
-    59	Ensembl_proteinid		
-    60	Ensembl_transcriptid		
-    61	Mutationassessor_uniprotid		
-    62	Mutationassessor_pred		
-    63	Mutationassessor_score		
-    64	Mutationassessor_score_rankscore		
-    65	Mutationassessor_variant		
-    66	Mutationtaster_aae		
-    67	Mutationtaster_converted_rankscore		
-    68	Mutationtaster_model		
-    69	Mutationtaster_pred		
-    70	Mutationtaster_score		
-    71	Revel_rankscore		
-    72	Revel_score		
-    73	Vest3_rankscore		
-    74	Vest3_score		
-    75	Cds_strand		
-    76	Clinvar_disease_name	Hutchinson-Gilford_syndrome|Charcot-Marie-Tooth_disease,_type_2|Familial_partial_lipodystrophy|Lethal_tight_skin_contracture_syndrome|Emery-Dreifuss_muscular_dystrophy|Limb-girdle_muscular_dystrophy,_type_1B|Charcot-Marie-Tooth_disease_type_2B1|Emery-Dreifuss_muscular_dystrophy_3,_autosomal_recessive|Congenital_muscular_dystrophy,_LMNA-related|Mandibuloacral_dysplasia|not_specified|Cardiovascular_phenotype|Mandibuloacral_dysplasia_with_type_A_lipodystrophy|Lipoatrophy_with_Diabetes,_Hepatic_Steatosis,_Hypertrophic_Cardiomyopathy,_and_Leukomelanodermic_Papules|Dilated_Cardiomyopathy,_Dominant|Limb-Girdle_Muscular_Dystrophy,_Recessive|not_provided	Anemia,_nonspherocytic_hemolytic,_due_to_G6PD_deficiency
-    77	Clinvar_sig	Benign	Benign
-    78	Codon_degeneracy		
-    79	Codonpos		
-    80	Common_pathogenic	0	0
-    81	Fathmm_mkl_coding_group		
-    82	Fathmm_mkl_coding_pred		
-    83	Fathmm_mkl_coding_rankscore		
-    84	Fathmm_mkl_coding_score		
-    85	Gnomad_ac	40459	
-    86	Gnomad_ac_afr		
-    87	Gnomad_ac_amr		
-    88	Gnomad_ac_asj		
-    89	Gnomad_ac_eas		
-    90	Gnomad_ac_fin		
-    91	Gnomad_ac_nfe		
-    92	Gnomad_ac_oth		
-    93	Gnomad_ac_popmax		
-    94	Gnomad_ac_sas		
-    95	Gnomad_af	0.2627	0.1646
-    96	Gnomad_af_afr	-1.0	-1.0
-    97	Gnomad_af_amr	-1.0	-1.0
-    98	Gnomad_af_asj	-1.0	-1.0
-    99	Gnomad_af_eas	-1.0	-1.0
-   100	Gnomad_af_fin	-1.0	-1.0
-   101	Gnomad_af_nfe	-1.0	-1.0
-   102	Gnomad_af_oth	-1.0	-1.0
-   103	Gnomad_af_popmax	-1.0	-1.0
-   104	Gnomad_af_sas	-1.0	-1.0
-   105	Gnomad_an	153988	
-   106	Gnomad_an_afr		
-   107	Gnomad_an_amr		
-   108	Gnomad_an_asj		
-   109	Gnomad_an_eas		
-   110	Gnomad_an_fin		
-   111	Gnomad_an_nfe		
-   112	Gnomad_an_oth		
-   113	Gnomad_an_popmax		
-   114	Gnomad_an_sas		
-   115	Gnomad_gc		
-   116	Gnomad_gc_female		
-   117	Gnomad_gc_male		
-   118	Gnomad_hom		
-   119	Gnomad_hom_female		
-   120	Gnomad_hom_male		
-   121	Gnomad_popmax		
-   122	Gnomad_exomes_ac		
-   123	Gnomad_exomes_af	-1.0	-1.0
-   124	Gnomad_exomes_an		
-   125	Gnomad_genomes_ac		
-   126	Gnomad_genomes_af	-1.0	-1.0
-   127	Gnomad_genomes_an		
-   128	hg19_chr		
-   129	hg19_pos		
-   130	Integrated_confidence_value		
-   131	Integrated_fitcons_score		
-   132	Refcodon		
-   133	RS_ids	rs4641	rs2230037
-   134	Allele	T	G
-   135	Feature_type	Transcript	Transcript
-   136	Intron		
-   137	Hgvsc	ENST00000368299.7:c.1698C>T	ENST00000369620.6:c.1449T>C
-   138	Hgvsp	ENSP00000357282.3:p.His566%3D	ENSP00000358633.2:p.Tyr483%3D
-   139	Cdna_position	1895_2253	1562_1799
-   140	Cds_position	1698_1845	1449_1686
-   141	Existing_variation	rs4641&CM003892&COSV61541921	rs2230037&CM133486
-   142	Allele_num	1	1
-   143	Distance		
-   144	Strand	1	-1
-   145	Flags		
-   146	Pick		
-   147	Variant_class	SNV	SNV
-   148	Symbol_source	HGNC	HGNC
-   149	Hgnc_id	HGNC:6636	HGNC:4057
-   150	Tsl	1	5
-   151	Appris		
-   152	Ccds	CCDS72941.1	
-   153	Ensp	ENSP00000357282	ENSP00000358633
-   154	Swissprot	P02545	P11413
-   155	Source	Ensembl	Ensembl
-   156	Given_ref	C	A
-   157	Used_ref	C	A
-   158	Domains	Low_complexity_(Seg):seg&PANTHER:PTHR45721:SF5&PANTHER:PTHR45721&MobiDB_lite:mobidb-lite	Gene3D:3.30.360.10&HAMAP:MF_00966&Pfam:PF02781&PIRSF:PIRSF000110&PANTHER:PTHR23429&PANTHER:PTHR23429:SF0&Superfamily:SSF55347
-   159	Hgvsg	chr1:g.156137743C>T	chrX:g.154532439A>G
-   160	Depth	191	120
-   161	Num_of_variant_impacts	34	14
-   162	Grouped_variant_impacts	[LMNA;intron_variant;LOW;ENST00000347559.6:c.1608+511C>T;],[LMNA;synonymous_variant;LOW;ENST00000361308.8:c.1443C>T;ENSP00000355292.5:p.His481%3D],[LMNA;synonymous_variant;LOW;ENST00000368297.5:c.1455C>T;ENSP00000357280.1:p.His485%3D],[LMNA;downstream_gene_variant;LOW;;],[LMNA;splice_region_variant;MED;ENST00000368299.7:c.1698C>T;ENSP00000357282.3:p.His566%3D],[LMNA;splice_region_variant;MED;ENST00000368300.9:c.1698C>T;ENSP00000357283.4:p.His566%3D],[LMNA;synonymous_variant;LOW;ENST00000368301.6:c.1698C>T;ENSP00000357284.2:p.His566%3D],[LMNA;splice_region_variant;MED;ENST00000448611.6:c.1362C>T;ENSP00000395597.2:p.His454%3D],[LMNA;splice_region_variant;MED;ENST00000473598.6:c.1401C>T;ENSP00000421821.1:p.His467%3D],[LMNA;non_coding_transcript_exon_variant;LOW;ENST00000496738.5:n.1167C>T;],[LMNA;non_coding_transcript_exon_variant;LOW;ENST00000498722.2:n.930C>T;],[LMNA;splice_region_variant;MED;ENST00000506981.1:n.282C>T;],[LMNA;intron_variant;LOW;ENST00000508500.1:c.486+511C>T;],[LMNA;splice_region_variant;MED;NM_001257374.3:c.1362C>T;NP_001244303.1:p.His454%3D],[LMNA;synonymous_variant;LOW;NM_001282624.1:c.1455C>T;NP_001269553.1:p.His485%3D],[LMNA;synonymous_variant;LOW;NM_001282625.1:c.1698C>T;NP_001269554.1:p.His566%3D],[LMNA;splice_region_variant;MED;NM_001282626.2:c.1698C>T;NP_001269555.1:p.His566%3D],[LMNA;synonymous_variant;LOW;NM_005572.3:c.1698C>T;NP_005563.1:p.His566%3D],[LMNA;splice_region_variant;MED;NM_170707.4:c.1698C>T;NP_733821.1:p.His566%3D],[LMNA;intron_variant;LOW;NM_170708.3:c.1608+511C>T;],[LMNA;splice_region_variant;MED;XM_011509533.1:c.1362C>T;XP_011507835.1:p.His454%3D],[LMNA;splice_region_variant;MED;XM_011509534.2:c.1074C>T;XP_011507836.1:p.His358%3D],[LMNA;splice_region_variant;MED;XR_921781.2:n.1985C>T;],[;regulatory_region_variant;LOW;;],[;TF_binding_site_variant;LOW;;]	[G6PD;synonymous_variant;LOW;ENST00000369620.6:c.1449T>C;ENSP00000358633.2:p.Tyr483%3D],[G6PD;synonymous_variant;LOW;ENST00000393562.10:c.1311T>C;ENSP00000377192.3:p.Tyr437%3D],[G6PD;synonymous_variant;LOW;ENST00000393564.6:c.1311T>C;ENSP00000377194.2:p.Tyr437%3D],[G6PD;downstream_gene_variant;LOW;;],[G6PD;non_coding_transcript_exon_variant;LOW;ENST00000490651.1:n.532T>C;],[G6PD;synonymous_variant;LOW;NM_000402.4:c.1401T>C;NP_000393.4:p.Tyr467%3D],[G6PD;synonymous_variant;LOW;NM_001042351.3:c.1311T>C;NP_001035810.1:p.Tyr437%3D],[G6PD;synonymous_variant;LOW;NM_001360016.2:c.1311T>C;NP_001346945.1:p.Tyr437%3D],[;regulatory_region_variant;LOW;;]
-   163	VGeneID:1	ENSG00000160789	ENSG00000160211
-   164	Gene_description	lamin_A/C	glucose-6-phosphate_dehydrogenase
-   165	ENTREZ	4000	2539
-   166	OMIM	[150330;Muscular_dystrophy,_congenital,_613205_(3),_Autosomal_dominant,_Lipodystrophy,_familial_partial,_type_2,_151660_(3),_Autosomal_dominant,_Charcot-Marie-Tooth_disease,_type_2B1,_605588_(3),_Autosomal_recessive,_Cardiomyopathy,_dilated,_1A,_115200_(3),_Autosomal_dominant,_Heart-hand_syndrome,_Slovenian_type,_610140_(3),_Autosomal_dominant,_Hutchinson-Gilford_progeria,_176670_(3),_Autosomal_dominant,_Autosomal_recessive,_Restrictive_dermopathy,_lethal,_275210_(3),_Autosomal_recessive,_Mandibuloacral_dysplasia,_248370_(3),_Autosomal_recessive,_Emery-Dreifuss_muscular_dystrophy_2,_autosomal_dominant,_181350_(3),_Autosomal_dominant,_Emery-Dreifuss_muscular_dystrophy_3,_autosomal_recessive,_616516_(3),_Autosomal_recessive,_Malouf_syndrome,_212112_(3),_Autosomal_dominant]	[305900;Hemolytic_anemia,_G6PD_deficient_(favism),_300908_(3),_X-linked_dominant,_{Resistance_to_malaria_due_to_G6PD_deficiency},_611162_(3)]
-   167	ORPHA	[79474;Atypical_Werner_syndrome;Disease-causing_germline_mutation(s)_in],[98853;Autosomal_dominant_Emery-Dreifuss_muscular_dystrophy;Disease-causing_germline_mutation(s)_in],[98855;Autosomal_recessive_Emery-Dreifuss_muscular_dystrophy;Disease-causing_germline_mutation(s)_in],[280365;Autosomal_semi-dominant_severe_lipodystrophic_laminopathy;Disease-causing_germline_mutation(s)_in],[98856;Charcot-Marie-Tooth_disease_type_2B1;Disease-causing_germline_mutation(s)_in],[157973;Congenital_muscular_dystrophy_due_to_LMNA_mutation;Disease-causing_germline_mutation(s)_in],[2229;Dilated_cardiomyopathy-hypergonadotropic_hypogonadism_syndrome;Disease-causing_germline_mutation(s)_in],[300751;Familial_dilated_cardiomyopathy_with_conduction_defect_due_to_LMNA_mutation;Disease-causing_germline_mutation(s)_in],[293899;Familial_isolated_arrhythmogenic_ventricular_dysplasia,_biventricular_form;Disease-causing_germline_mutation(s)_in],[293888;Familial_isolated_arrhythmogenic_ventricular_dysplasia,_left_dominant_form;Disease-causing_germline_mutation(s)_in],[293910;Familial_isolated_arrhythmogenic_ventricular_dysplasia,_right_dominant_form;Disease-causing_germline_mutation(s)_in],[2348;Familial_partial_lipodystrophy,_Dunnigan_type;Disease-causing_germline_mutation(s)_in],[79084;Familial_partial_lipodystrophy,_Köbberling_type;Candidate_gene_tested_in],[168796;Heart-hand_syndrome,_Slovenian_type;Disease-causing_germline_mutation(s)_in],[740;Hutchinson-Gilford_progeria_syndrome;Disease-causing_germline_mutation(s)_in],[363618;LMNA-related_cardiocutaneous_progeria_syndrome;Disease-causing_germline_mutation(s)_in],[54260;Left_ventricular_noncompaction;Major_susceptibility_factor_in],[90153;Mandibuloacral_dysplasia_with_type_A_lipodystrophy;Disease-causing_germline_mutation(s)_in],[1662;Restrictive_dermopathy;Disease-causing_germline_mutation(s)_in]	[466026;Class_I_glucose-6-phosphate_dehydrogenase_deficiency;Disease-causing_germline_mutation(s)_in],[362;NON_RARE_IN_EUROPE:_Glucose-6-phosphate-dehydrogenase_deficiency;Disease-causing_germline_mutation(s)_in]
-   168	NM	NM_001282626.2	
+     1	variant_id	1311	22498	1446	1447
+     2	gts.18M14M	C/T	G/G	G/A	A/T
+     3	gt_types.18M14M	1	3	1	1
+     4	gt_phases.18M14M	0	0	0	0
+     5	gt_depths.18M14M	184	115	103	162
+     6	gt_ref_depths.18M14M	106	0	44	85
+     7	gt_alt_depths.18M14M	78	115	59	77
+     8	gt_quals.18M14M	99.0	99.0	99.0	99.0
+     9	gt_alt_freqs.18M14M	0.42391304347826086	1.0	0.5728155339805825	0.47530864197530864
+    10	variant_id:1	1311	22498	1446	1447
+    11	Chrom	chr1	chrX	chr1	chr1
+    12	Start	156137743	154532439	169324483	169421719
+    13	End	156137744	154532440	169324484	169421720
+    14	RS	rs4641	rs2230037	rs1140523	rs35107735
+    15	Ref	C	A	G	A
+    16	Alt	T	G	A	T
+    17	Quality	2215.80004882812	3834.80004882812	1857.80004882813	2435.80004882812
+    18	Filter				
+    19	VType	snp	snp	snp	snp
+    20	VSubType	ts	ts	ts	tv
+    21	Call_rate	1.0	1.0	1.0	1.0
+    22	Num_hom_ref	0	0	0	0
+    23	Num_het	1	0	1	1
+    24	Num_hom_alt	0	1	0	0
+    25	Num_unknown	0	0	0	0
+    26	Gene	LMNA	G6PD	NME7	CCDC181
+    27	VGeneID	ENSG00000160789	ENSG00000160211	ENSG00000143156	ENSG00000117477
+    28	Ensembl_transcript_id	ENST00000368299	ENST00000369620	ENST00000367811	ENST00000367805
+    29	IS_exonic	0	1	1	1
+    30	IS_coding	0	1	1	1
+    31	IS_lof	0	0	0	0
+    32	IS_splicing	1	0	0	0
+    33	IS_canonical	0	0	1	0
+    34	Exon	10_12	11_13	2_12	3_6
+    35	Codon_change	caC_caT	taT_taC	ttC_ttT	Ttt_Att
+    36	AA_change	H	Y	F	F_I
+    37	AA_length	566_614	483_561	7_376	238_508
+    38	Biotype	protein_coding	protein_coding	protein_coding	protein_coding
+    39	Impact	splice_region_variant	synonymous_variant	synonymous_variant	missense_variant
+    40	Impact_so	splice_region_variant	synonymous_variant	synonymous_variant	missense_variant
+    41	Impact_severity	MED	LOW	LOW	MED
+    42	Polyphen_pred				possibly_damaging
+    43	Polyphen_score				0.901
+    44	Sift_pred				tolerated
+    45	Sift_score				0.34
+    46	Ancestral_allele				A
+    47	Cadd_phred				9.036
+    48	Cadd_raw				0.732156
+    49	Cadd_raw_rankscore				0.16378
+    50	Dann_rankscore				0.26425
+    51	Dann_score				0.95469055877181341
+    52	Eigen_pc_phred				1.828239
+    53	Eigen_pc_raw				-0.182493739145588
+    54	Eigen_pc_raw_rankscore				0.31958
+    55	Eigen_phred				2.041882
+    56	Eigen_raw				-0.143105432110077
+    57	Eigen_coding_or_noncoding				c
+    58	Ensembl_geneid				ENSG00000117477
+    59	Ensembl_proteinid				ENSP00000356780,ENSP00000356779,ENSP00000442297,ENSP00000479042,ENSP00000411000
+    60	Ensembl_transcriptid				ENST00000367806,ENST00000367805,ENST00000545005,ENST00000491570,ENST00000456107
+    61	Mutationassessor_uniprotid				CC181_HUMAN
+    62	Mutationassessor_pred				M
+    63	Mutationassessor_score				2.585
+    64	Mutationassessor_score_rankscore				0.75791
+    65	Mutationassessor_variant				F238I
+    66	Mutationtaster_aae				F238I,F238I,F238I
+    67	Mutationtaster_converted_rankscore				0.31829
+    68	Mutationtaster_model				simple_aae,simple_aae,simple_aae
+    69	Mutationtaster_pred				P,P,P
+    70	Mutationtaster_score				0.485204,0.485204,0.485204
+    71	Revel_rankscore				0.22671
+    72	Revel_score				0.076
+    73	Vest3_rankscore				0.22584
+    74	Vest3_score				0.134,0.134,0.134,0.136,0.185
+    75	Cds_strand				-
+    76	Clinvar_disease_name	Hutchinson-Gilford_syndrome|Charcot-Marie-Tooth_disease,_type_2|Familial_partial_lipodystrophy|Lethal_tight_skin_contracture_syndrome|Emery-Dreifuss_muscular_dystrophy|Limb-girdle_muscular_dystrophy,_type_1B|Charcot-Marie-Tooth_disease_type_2B1|Emery-Dreifuss_muscular_dystrophy_3,_autosomal_recessive|Congenital_muscular_dystrophy,_LMNA-related|Mandibuloacral_dysplasia|not_specified|Cardiovascular_phenotype|Mandibuloacral_dysplasia_with_type_A_lipodystrophy|Lipoatrophy_with_Diabetes,_Hepatic_Steatosis,_Hypertrophic_Cardiomyopathy,_and_Leukomelanodermic_Papules|Dilated_Cardiomyopathy,_Dominant|Limb-Girdle_Muscular_Dystrophy,_Recessive|not_provided	Anemia,_nonspherocytic_hemolytic,_due_to_G6PD_deficiency		
+    77	Clinvar_sig	Benign	Benign		
+    78	Codon_degeneracy				0
+    79	Codonpos				1
+    80	Common_pathogenic	0	0	0	0
+    81	Fathmm_mkl_coding_group				AEFGBI
+    82	Fathmm_mkl_coding_pred				D
+    83	Fathmm_mkl_coding_rankscore				0.28427
+    84	Fathmm_mkl_coding_score				0.50483
+    85	Gnomad_ac	40459		87946	67215
+    86	Gnomad_ac_afr				
+    87	Gnomad_ac_amr				
+    88	Gnomad_ac_asj				
+    89	Gnomad_ac_eas				
+    90	Gnomad_ac_fin				
+    91	Gnomad_ac_nfe				
+    92	Gnomad_ac_oth				
+    93	Gnomad_ac_popmax				
+    94	Gnomad_ac_sas				
+    95	Gnomad_af	0.2627	0.1646	0.3521	0.2674
+    96	Gnomad_af_afr	-1.0	-1.0	-1.0	-1.0
+    97	Gnomad_af_amr	-1.0	-1.0	-1.0	-1.0
+    98	Gnomad_af_asj	-1.0	-1.0	-1.0	-1.0
+    99	Gnomad_af_eas	-1.0	-1.0	-1.0	-1.0
+   100	Gnomad_af_fin	-1.0	-1.0	-1.0	-1.0
+   101	Gnomad_af_nfe	-1.0	-1.0	-1.0	-1.0
+   102	Gnomad_af_oth	-1.0	-1.0	-1.0	-1.0
+   103	Gnomad_af_popmax	-1.0	-1.0	-1.0	-1.0
+   104	Gnomad_af_sas	-1.0	-1.0	-1.0	-1.0
+   105	Gnomad_an	153988		249772	251322
+   106	Gnomad_an_afr				
+   107	Gnomad_an_amr				
+   108	Gnomad_an_asj				
+   109	Gnomad_an_eas				
+   110	Gnomad_an_fin				
+   111	Gnomad_an_nfe				
+   112	Gnomad_an_oth				
+   113	Gnomad_an_popmax				
+   114	Gnomad_an_sas				
+   115	Gnomad_gc				
+   116	Gnomad_gc_female				
+   117	Gnomad_gc_male				
+   118	Gnomad_hom				
+   119	Gnomad_hom_female				
+   120	Gnomad_hom_male				
+   121	Gnomad_popmax				
+   122	Gnomad_exomes_ac				66025
+   123	Gnomad_exomes_af	-1.0	-1.0	-1.0	0.2682831
+   124	Gnomad_exomes_an				246102
+   125	Gnomad_genomes_ac				8384
+   126	Gnomad_genomes_af	-1.0	-1.0	-1.0	0.2714674
+   127	Gnomad_genomes_an				30884
+   128	hg19_chr				1
+   129	hg19_pos				169390957
+   130	Integrated_confidence_value				0
+   131	Integrated_fitcons_score				0.638212
+   132	Refcodon				TTT
+   133	RS_ids	rs4641	rs2230037	rs1140523	rs35107735
+   134	Allele	T	G	A	T
+   135	Feature_type	Transcript	Transcript	Transcript	Transcript
+   136	Intron				
+   137	Hgvsc	ENST00000368299.7:c.1698C>T	ENST00000369620.6:c.1449T>C	ENST00000367811.8:c.21C>T	ENST00000367805.7:c.712T>A
+   138	Hgvsp	ENSP00000357282.3:p.His566%3D	ENSP00000358633.2:p.Tyr483%3D	ENSP00000356785.3:p.Phe7%3D	ENSP00000356779.3:p.Phe238Ile
+   139	Cdna_position	1895_2253	1562_1799	108_1472	922_1914
+   140	Cds_position	1698_1845	1449_1686	21_1131	712_1527
+   141	Existing_variation	rs4641&CM003892&COSV61541921	rs2230037&CM133486	rs1140523&COSV63168393	rs35107735&COSV63156276
+   142	Allele_num	1	1	1	1
+   143	Distance				
+   144	Strand	1	-1	-1	-1
+   145	Flags				
+   146	Pick			1	
+   147	Variant_class	SNV	SNV	SNV	SNV
+   148	Symbol_source	HGNC	HGNC	HGNC	HGNC
+   149	Hgnc_id	HGNC:6636	HGNC:4057	HGNC:20461	HGNC:28051
+   150	Tsl	1	5	1	1
+   151	Appris			P3	P3
+   152	Ccds	CCDS72941.1		CCDS1277.1	CCDS1279.1
+   153	Ensp	ENSP00000357282	ENSP00000358633	ENSP00000356785	ENSP00000356779
+   154	Swissprot	P02545	P11413	Q9Y5B8	Q5TID7
+   155	Source	Ensembl	Ensembl	Ensembl	Ensembl
+   156	Given_ref	C	A	G	A
+   157	Used_ref	C	A	G	A
+   158	Domains	Low_complexity_(Seg):seg&PANTHER:PTHR45721:SF5&PANTHER:PTHR45721&MobiDB_lite:mobidb-lite	Gene3D:3.30.360.10&HAMAP:MF_00966&Pfam:PF02781&PIRSF:PIRSF000110&PANTHER:PTHR23429&PANTHER:PTHR23429:SF0&Superfamily:SSF55347	PIRSF:PIRSF036503&PROSITE_profiles:PS51336&PANTHER:PTHR43109&PANTHER:PTHR43109:SF2&SMART:SM00676	PANTHER:PTHR14320
+   159	Hgvsg	chr1:g.156137743C>T	chrX:g.154532439A>G	chr1:g.169324483G>A	chr1:g.169421719A>T
+   160	Depth	191	120	105	166
+   161	Num_of_variant_impacts	34	14	14	13
+   162	Grouped_variant_impacts	[LMNA;intron_variant;LOW;ENST00000347559.6:c.1608+511C>T;],[LMNA;synonymous_variant;LOW;ENST00000361308.8:c.1443C>T;ENSP00000355292.5:p.His481%3D],[LMNA;synonymous_variant;LOW;ENST00000368297.5:c.1455C>T;ENSP00000357280.1:p.His485%3D],[LMNA;downstream_gene_variant;LOW;;],[LMNA;splice_region_variant;MED;ENST00000368299.7:c.1698C>T;ENSP00000357282.3:p.His566%3D],[LMNA;splice_region_variant;MED;ENST00000368300.9:c.1698C>T;ENSP00000357283.4:p.His566%3D],[LMNA;synonymous_variant;LOW;ENST00000368301.6:c.1698C>T;ENSP00000357284.2:p.His566%3D],[LMNA;splice_region_variant;MED;ENST00000448611.6:c.1362C>T;ENSP00000395597.2:p.His454%3D],[LMNA;splice_region_variant;MED;ENST00000473598.6:c.1401C>T;ENSP00000421821.1:p.His467%3D],[LMNA;non_coding_transcript_exon_variant;LOW;ENST00000496738.5:n.1167C>T;],[LMNA;non_coding_transcript_exon_variant;LOW;ENST00000498722.2:n.930C>T;],[LMNA;splice_region_variant;MED;ENST00000506981.1:n.282C>T;],[LMNA;intron_variant;LOW;ENST00000508500.1:c.486+511C>T;],[LMNA;splice_region_variant;MED;NM_001257374.3:c.1362C>T;NP_001244303.1:p.His454%3D],[LMNA;synonymous_variant;LOW;NM_001282624.1:c.1455C>T;NP_001269553.1:p.His485%3D],[LMNA;synonymous_variant;LOW;NM_001282625.1:c.1698C>T;NP_001269554.1:p.His566%3D],[LMNA;splice_region_variant;MED;NM_001282626.2:c.1698C>T;NP_001269555.1:p.His566%3D],[LMNA;synonymous_variant;LOW;NM_005572.3:c.1698C>T;NP_005563.1:p.His566%3D],[LMNA;splice_region_variant;MED;NM_170707.4:c.1698C>T;NP_733821.1:p.His566%3D],[LMNA;intron_variant;LOW;NM_170708.3:c.1608+511C>T;],[LMNA;splice_region_variant;MED;XM_011509533.1:c.1362C>T;XP_011507835.1:p.His454%3D],[LMNA;splice_region_variant;MED;XM_011509534.2:c.1074C>T;XP_011507836.1:p.His358%3D],[LMNA;splice_region_variant;MED;XR_921781.2:n.1985C>T;],[;regulatory_region_variant;LOW;;],[;TF_binding_site_variant;LOW;;]	[G6PD;synonymous_variant;LOW;ENST00000369620.6:c.1449T>C;ENSP00000358633.2:p.Tyr483%3D],[G6PD;synonymous_variant;LOW;ENST00000393562.10:c.1311T>C;ENSP00000377192.3:p.Tyr437%3D],[G6PD;synonymous_variant;LOW;ENST00000393564.6:c.1311T>C;ENSP00000377194.2:p.Tyr437%3D],[G6PD;downstream_gene_variant;LOW;;],[G6PD;non_coding_transcript_exon_variant;LOW;ENST00000490651.1:n.532T>C;],[G6PD;synonymous_variant;LOW;NM_000402.4:c.1401T>C;NP_000393.4:p.Tyr467%3D],[G6PD;synonymous_variant;LOW;NM_001042351.3:c.1311T>C;NP_001035810.1:p.Tyr437%3D],[G6PD;synonymous_variant;LOW;NM_001360016.2:c.1311T>C;NP_001346945.1:p.Tyr437%3D],[;regulatory_region_variant;LOW;;]	[NME7;synonymous_variant;LOW;ENST00000367811.8:c.21C>T;ENSP00000356785.3:p.Phe7%3D],[Z99758.1;downstream_gene_variant;LOW;;],[NME7;upstream_gene_variant;LOW;;],[NME7;intron_variant;LOW;ENST00000472647.5:c.-74-14C>T;],[NME7;intron_variant;LOW;ENST00000480478.5:n.91-14403C>T;],[NME7;non_coding_transcript_exon_variant;LOW;ENST00000485609.5:n.259C>T;],[NME7;non_coding_transcript_exon_variant;LOW;ENST00000491225.5:n.108C>T;],[NME7;non_coding_transcript_exon_variant;LOW;ENST00000524967.5:n.83C>T;],[NME7;synonymous_variant;LOW;ENST00000525440.5:c.21C>T;ENSP00000431467.1:p.Phe7%3D],[NME7;non_coding_transcript_exon_variant;LOW;ENST00000527460.1:n.93C>T;],[NME7;synonymous_variant;LOW;ENST00000528517.5:c.21C>T;ENSP00000432753.1:p.Phe7%3D],[NME7;synonymous_variant;LOW;NM_013330.5:c.21C>T;NP_037462.1:p.Phe7%3D],[NME7;intron_variant;LOW;NM_197972.2:c.-74-14C>T;],[NME7;non_coding_transcript_exon_variant;LOW;NR_104229.1:n.274C>T;]	[CCDC181;missense_variant;MED;ENST00000367805.7:c.712T>A;ENSP00000356779.3:p.Phe238Ile],[CCDC181;missense_variant;MED;ENST00000367806.7:c.712T>A;ENSP00000356780.3:p.Phe238Ile],[CCDC181;missense_variant;MED;ENST00000456107.1:c.712T>A;ENSP00000411000.1:p.Phe238Ile],[CCDC181;missense_variant;MED;ENST00000491570.2:c.712T>A;ENSP00000479042.1:p.Phe238Ile],[CCDC181;missense_variant;MED;ENST00000545005.5:c.712T>A;ENSP00000442297.1:p.Phe238Ile],[CCDC181;missense_variant;MED;NM_001300968.1:c.712T>A;NP_001287897.1:p.Phe238Ile],[CCDC181;missense_variant;MED;NM_001300969.1:c.712T>A;NP_001287898.1:p.Phe238Ile],[CCDC181;missense_variant;MED;NM_021179.2:c.712T>A;NP_067002.1:p.Phe238Ile],[CCDC181;missense_variant;MED;XM_005245383.1:c.712T>A;XP_005245440.1:p.Phe238Ile],[CCDC181;missense_variant;MED;XM_011509827.2:c.712T>A;XP_011508129.1:p.Phe238Ile],[CCDC181;missense_variant;MED;XM_017001938.1:c.712T>A;XP_016857427.1:p.Phe238Ile],[CCDC181;missense_variant;MED;XM_017001939.1:c.712T>A;XP_016857428.1:p.Phe238Ile],[CCDC181;missense_variant;MED;XM_017001940.1:c.712T>A;XP_016857429.1:p.Phe238Ile]
+   163	VGeneID:1	ENSG00000160789	ENSG00000160211	ENSG00000143156	ENSG00000117477
+   164	Gene_description	lamin_A/C	glucose-6-phosphate_dehydrogenase	NME/NM23_family_member_7	coiled-coil_domain_containing_181
+   165	ENTREZ	4000	2539	29922	57821
+   166	OMIM	[150330;Muscular_dystrophy,_congenital,_613205_(3),_Autosomal_dominant,_Lipodystrophy,_familial_partial,_type_2,_151660_(3),_Autosomal_dominant,_Charcot-Marie-Tooth_disease,_type_2B1,_605588_(3),_Autosomal_recessive,_Cardiomyopathy,_dilated,_1A,_115200_(3),_Autosomal_dominant,_Heart-hand_syndrome,_Slovenian_type,_610140_(3),_Autosomal_dominant,_Hutchinson-Gilford_progeria,_176670_(3),_Autosomal_dominant,_Autosomal_recessive,_Restrictive_dermopathy,_lethal,_275210_(3),_Autosomal_recessive,_Mandibuloacral_dysplasia,_248370_(3),_Autosomal_recessive,_Emery-Dreifuss_muscular_dystrophy_2,_autosomal_dominant,_181350_(3),_Autosomal_dominant,_Emery-Dreifuss_muscular_dystrophy_3,_autosomal_recessive,_616516_(3),_Autosomal_recessive,_Malouf_syndrome,_212112_(3),_Autosomal_dominant]	[305900;Hemolytic_anemia,_G6PD_deficient_(favism),_300908_(3),_X-linked_dominant,_{Resistance_to_malaria_due_to_G6PD_deficiency},_611162_(3)]	[613465;]	[;]
+   167	ORPHA	[79474;Atypical_Werner_syndrome;Disease-causing_germline_mutation(s)_in],[98853;Autosomal_dominant_Emery-Dreifuss_muscular_dystrophy;Disease-causing_germline_mutation(s)_in],[98855;Autosomal_recessive_Emery-Dreifuss_muscular_dystrophy;Disease-causing_germline_mutation(s)_in],[280365;Autosomal_semi-dominant_severe_lipodystrophic_laminopathy;Disease-causing_germline_mutation(s)_in],[98856;Charcot-Marie-Tooth_disease_type_2B1;Disease-causing_germline_mutation(s)_in],[157973;Congenital_muscular_dystrophy_due_to_LMNA_mutation;Disease-causing_germline_mutation(s)_in],[2229;Dilated_cardiomyopathy-hypergonadotropic_hypogonadism_syndrome;Disease-causing_germline_mutation(s)_in],[300751;Familial_dilated_cardiomyopathy_with_conduction_defect_due_to_LMNA_mutation;Disease-causing_germline_mutation(s)_in],[293899;Familial_isolated_arrhythmogenic_ventricular_dysplasia,_biventricular_form;Disease-causing_germline_mutation(s)_in],[293888;Familial_isolated_arrhythmogenic_ventricular_dysplasia,_left_dominant_form;Disease-causing_germline_mutation(s)_in],[293910;Familial_isolated_arrhythmogenic_ventricular_dysplasia,_right_dominant_form;Disease-causing_germline_mutation(s)_in],[2348;Familial_partial_lipodystrophy,_Dunnigan_type;Disease-causing_germline_mutation(s)_in],[79084;Familial_partial_lipodystrophy,_Köbberling_type;Candidate_gene_tested_in],[168796;Heart-hand_syndrome,_Slovenian_type;Disease-causing_germline_mutation(s)_in],[740;Hutchinson-Gilford_progeria_syndrome;Disease-causing_germline_mutation(s)_in],[363618;LMNA-related_cardiocutaneous_progeria_syndrome;Disease-causing_germline_mutation(s)_in],[54260;Left_ventricular_noncompaction;Major_susceptibility_factor_in],[90153;Mandibuloacral_dysplasia_with_type_A_lipodystrophy;Disease-causing_germline_mutation(s)_in],[1662;Restrictive_dermopathy;Disease-causing_germline_mutation(s)_in]	[466026;Class_I_glucose-6-phosphate_dehydrogenase_deficiency;Disease-causing_germline_mutation(s)_in],[362;NON_RARE_IN_EUROPE:_Glucose-6-phosphate-dehydrogenase_deficiency;Disease-causing_germline_mutation(s)_in]	[101063;Situs_inversus_totalis;Disease-causing_germline_mutation(s)_in]	[;;]
+   168	NM	NM_001282626.2		NM_013330.5	NM_021179.2

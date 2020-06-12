@@ -1,14 +1,14 @@
-     1	NUM	1	100958	10	100967	100
-     2	GeneID	1	ENSG00000121410	1000	ENSG00000170558	100033448
-     3	Symbol	A1BG	A1BG	CDH2	CDH2	SNORD115-11
-     4	Description	alpha-1-B_glycoprotein	alpha-1-B_glycoprotein	cadherin_2	cadherin_2	small_nucleolar_RNA,_C/D_box_115-11
-     5	MIM	138670	138670	114020	114020	
-     6	OMIM_Phenotypes					
-     7	Orpha_disorder					
-     8	Orpha_number					
-     9	Orpha_association					
-    10	Orpha_assocstatus					
-    11	ENSG	ENSG00000121410	ENSG00000121410	ENSG00000170558	ENSG00000170558	ENSG00000200486
-    12	ENTREZ	1	1	1000	1000	100033448
-    13	NM	NM_130786.4	NM_130786.4	NM_001792.5	NM_001792.5	NR_003303.1
-    14	ENST	ENST00000263100	ENST00000263100	ENST00000269141	ENST00000269141	ENST00000363616
+     1	NUM	96369	197327
+     2	GeneID	8777	ENSG00000107186
+     3	Symbol	MPDZ	MPDZ
+     4	Description	multiple_PDZ_domain_crumbs_cell_polarity_complex_component	multiple_PDZ_domain_crumbs_cell_polarity_complex_component
+     5	MIM	603785	603785
+     6	OMIM_Phenotypes	Hydrocephalus,_congenital,_2,_with_or_without_brain_or_eye_anomalies,_615219_(3),_Autosomal_recessive	Hydrocephalus,_congenital,_2,_with_or_without_brain_or_eye_anomalies,_615219_(3),_Autosomal_recessive
+     7	Orpha_disorder	Congenital_communicating_hydrocephalus	Congenital_communicating_hydrocephalus
+     8	Orpha_number	269505	269505
+     9	Orpha_association	Disease-causing_germline_mutation(s)_in	Disease-causing_germline_mutation(s)_in
+    10	Orpha_assocstatus	Assessed	Assessed
+    11	ENSG	ENSG00000107186	ENSG00000107186
+    12	ENTREZ	8777	8777
+    13	NM	NM_001261406.2	NM_001375416.1
+    14	ENST	ENST00000381022	ENST00000447879
