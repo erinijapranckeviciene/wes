@@ -8,6 +8,6 @@ sqlite3 ${database} ".mode tabs" ".headers on" "drop table if exists genotypes;"
 sqlite3 ${database} ".mode tabs" ".headers on" "drop table if exists genelevel;" ".import /projects/Annotations/GeneLevel/omim-orpha-ensg-annotations.csv genelevel"
  
 # run sql script that outputs variant annotation table
-sqlite3 ${database} < report.sql > ${name}-report.csv
+sqlite3 ${database} < report1.sql > ${name}-report.csv
 
 # Arrange columns properly

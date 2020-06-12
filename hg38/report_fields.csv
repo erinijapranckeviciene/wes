@@ -1,0 +1,167 @@
+     1	variant_id	1	2	3
+     2	gts.18M14M	C/C	G/A	A/G
+     3	gt_types.18M14M	3	1	1
+     4	gt_phases.18M14M	0	0	0
+     5	gt_depths.18M14M	118	222	157
+     6	gt_ref_depths.18M14M	1	120	70
+     7	gt_alt_depths.18M14M	117	102	87
+     8	gt_quals.18M14M	99.0	99.0	99.0
+     9	gt_alt_freqs.18M14M	0.9915254237288136	0.4594594594594595	0.554140127388535
+    10	variant_id:1	1	2	3
+    11	Chrom	chr1	chr1	chr1
+    12	Start	942451	946247	952421
+    13	End	942452	946248	952422
+    14	RS	rs6672356	rs2272757	rs3828047
+    15	Ref	T	G	A
+    16	Alt	C	A	G
+    17	Quality	3905.80004882812	2902.80004882812	2679.80004882812
+    18	Filter			
+    19	VType	snp	snp	snp
+    20	VSubType	ts	ts	ts
+    21	Call_rate	1.0	1.0	1.0
+    22	Num_hom_ref	0	0	0
+    23	Num_het	0	1	1
+    24	Num_hom_alt	1	0	0
+    25	Num_unknown	0	0	0
+    26	Gene	SAMD11	NOC2L	NOC2L
+    27	VGeneID	ENSG00000187634	ENSG00000188976	ENSG00000188976
+    28	Ensembl_transcript_id	ENST00000341065	ENST00000327044	ENST00000327044
+    29	IS_exonic	1	1	1
+    30	IS_coding	1	1	1
+    31	IS_lof	0	0	0
+    32	IS_splicing	0	0	0
+    33	IS_canonical	0	1	1
+    34	Exon	8_12	16_19	10_19
+    35	Codon_change	Tgg_Cgg	Ctg_Ttg	acT_acC
+    36	AA_change	W_R	L	T
+    37	AA_length	251_589	615_749	394_749
+    38	Biotype	protein_coding	protein_coding	protein_coding
+    39	Impact	missense_variant	synonymous_variant	synonymous_variant
+    40	Impact_so	missense_variant	synonymous_variant	synonymous_variant
+    41	Impact_severity	MED	LOW	LOW
+    42	Polyphen_pred	benign		
+    43	Polyphen_score	0.0		
+    44	Sift_pred	tolerated		
+    45	Sift_score	1.0		
+    46	Ancestral_allele	N		
+    47	Cadd_phred	0.712		
+    48	Cadd_raw	-0.286600		
+    49	Cadd_raw_rankscore	0.06934		
+    50	Dann_rankscore	0.06338		
+    51	Dann_score	0.60593692565670076		
+    52	Eigen_pc_phred	0.5229059		
+    53	Eigen_pc_raw	-0.973245065350672		
+    54	Eigen_pc_raw_rankscore	0.10228		
+    55	Eigen_phred	0.2126896		
+    56	Eigen_raw	-1.22071530028301		
+    57	Eigen_coding_or_noncoding	c		
+    58	Ensembl_geneid	ENSG00000187634		
+    59	Ensembl_proteinid	ENSP00000480678,ENSP00000484820		
+    60	Ensembl_transcriptid	ENST00000618323,ENST00000620200		
+    61	Mutationassessor_uniprotid	.		
+    62	Mutationassessor_pred	.		
+    63	Mutationassessor_score	.		
+    64	Mutationassessor_score_rankscore	.		
+    65	Mutationassessor_variant	.		
+    66	Mutationtaster_aae	W343R		
+    67	Mutationtaster_converted_rankscore	0.20503		
+    68	Mutationtaster_model	simple_aae		
+    69	Mutationtaster_pred	P		
+    70	Mutationtaster_score	0.999749		
+    71	Revel_rankscore	.		
+    72	Revel_score	.		
+    73	Vest3_rankscore	.		
+    74	Vest3_score	.		
+    75	Cds_strand	+		
+    76	Clinvar_disease_name			
+    77	Clinvar_sig			
+    78	Codon_degeneracy	0		
+    79	Codonpos	2		
+    80	Common_pathogenic	0	0	0
+    81	Fathmm_mkl_coding_group	AEFDGBCI		
+    82	Fathmm_mkl_coding_pred	N		
+    83	Fathmm_mkl_coding_rankscore	0.15473		
+    84	Fathmm_mkl_coding_score	0.10033		
+    85	Gnomad_ac	92624	142512	234760
+    86	Gnomad_ac_afr			
+    87	Gnomad_ac_amr			
+    88	Gnomad_ac_asj			
+    89	Gnomad_ac_eas			
+    90	Gnomad_ac_fin			
+    91	Gnomad_ac_nfe			
+    92	Gnomad_ac_oth			
+    93	Gnomad_ac_popmax			
+    94	Gnomad_ac_sas			
+    95	Gnomad_af	0.9999	0.5696	0.9378
+    96	Gnomad_af_afr	-1.0	-1.0	-1.0
+    97	Gnomad_af_amr	-1.0	-1.0	-1.0
+    98	Gnomad_af_asj	-1.0	-1.0	-1.0
+    99	Gnomad_af_eas	-1.0	-1.0	-1.0
+   100	Gnomad_af_fin	-1.0	-1.0	-1.0
+   101	Gnomad_af_nfe	-1.0	-1.0	-1.0
+   102	Gnomad_af_oth	-1.0	-1.0	-1.0
+   103	Gnomad_af_popmax	-1.0	-1.0	-1.0
+   104	Gnomad_af_sas	-1.0	-1.0	-1.0
+   105	Gnomad_an	92636	250180	250332
+   106	Gnomad_an_afr			
+   107	Gnomad_an_amr			
+   108	Gnomad_an_asj			
+   109	Gnomad_an_eas			
+   110	Gnomad_an_fin			
+   111	Gnomad_an_nfe			
+   112	Gnomad_an_oth			
+   113	Gnomad_an_popmax			
+   114	Gnomad_an_sas			
+   115	Gnomad_gc			
+   116	Gnomad_gc_female			
+   117	Gnomad_gc_male			
+   118	Gnomad_hom			
+   119	Gnomad_hom_female			
+   120	Gnomad_hom_male			
+   121	Gnomad_popmax			
+   122	Gnomad_exomes_ac	90805		
+   123	Gnomad_exomes_af	0.9998789	-1.0	-1.0
+   124	Gnomad_exomes_an	90816		
+   125	Gnomad_genomes_ac	30632		
+   126	Gnomad_genomes_af	0.9998042	-1.0	-1.0
+   127	Gnomad_genomes_an	30638		
+   128	hg19_chr	1		
+   129	hg19_pos	877831		
+   130	Integrated_confidence_value	0		
+   131	Integrated_fitcons_score	0.59774		
+   132	Refcodon	CTG		
+   133	RS_ids	rs6672356	rs2272757	rs3828047
+   134	Allele	C	A	G
+   135	Feature_type	Transcript	Transcript	Transcript
+   136	Intron			
+   137	Hgvsc	ENST00000341065.8:c.750T>C	ENST00000327044.7:c.1843C>T	ENST00000327044.7:c.1182T>C
+   138	Hgvsp	ENSP00000349216.4:p.Trp251Arg	ENSP00000317992.6:p.Leu615%3D	ENSP00000317992.6:p.Thr394%3D
+   139	Cdna_position	750_2191	1859_2757	1198_2757
+   140	Cds_position	751_1770	1843_2250	1182_2250
+   141	Existing_variation	rs6672356&COSV58985794	rs2272757&COSV58986455	rs3828047
+   142	Allele_num	1	1	1
+   143	Distance			
+   144	Strand	1	-1	-1
+   145	Flags	cds_start_NF		
+   146	Pick		1	1
+   147	Variant_class	SNV	SNV	SNV
+   148	Symbol_source	HGNC	HGNC	HGNC
+   149	Hgnc_id	HGNC:28706	HGNC:24517	HGNC:24517
+   150	Tsl	5	1	1
+   151	Appris		P1	P1
+   152	Ccds		CCDS3.1	CCDS3.1
+   153	Ensp	ENSP00000349216	ENSP00000317992	ENSP00000317992
+   154	Swissprot		Q9Y3T9	Q9Y3T9
+   155	Source	Ensembl	Ensembl	Ensembl
+   156	Given_ref	T	G	A
+   157	Used_ref	T	G	A
+   158	Domains	PANTHER:PTHR12247&PANTHER:PTHR12247:SF67	Pfam:PF03715&PANTHER:PTHR12687&PANTHER:PTHR12687:SF10&Superfamily:SSF48371	Pfam:PF03715&PANTHER:PTHR12687&PANTHER:PTHR12687:SF10&Superfamily:SSF48371
+   159	Hgvsg	chr1:g.942451T>C	chr1:g.946247G>A	chr1:g.952421A>G
+   160	Depth	119	223	159
+   161	Num_of_variant_impacts	23	21	4
+   162	Grouped_variant_impacts	[NOC2L;downstream_gene_variant;LOW;;],[SAMD11;missense_variant;MED;ENST00000341065.8:c.750T>C;ENSP00000349216.4:p.Trp251Arg],[SAMD11;missense_variant;MED;ENST00000342066.8:c.1027T>C;ENSP00000342313.3:p.Trp343Arg],[SAMD11;downstream_gene_variant;LOW;;],[SAMD11;missense_variant;MED;ENST00000455979.1:c.507T>C;ENSP00000412228.1:p.Trp170Arg],[SAMD11;non_coding_transcript_exon_variant;LOW;ENST00000464948.1:n.286T>C;],[SAMD11;non_coding_transcript_exon_variant;LOW;ENST00000466827.1:n.191T>C;],[SAMD11;non_coding_transcript_exon_variant;LOW;ENST00000474461.1:n.389T>C;],[SAMD11;synonymous_variant;LOW;ENST00000616016.4:c.864T>C;ENSP00000478421.1:p.Pro288%3D],[SAMD11;missense_variant;MED;ENST00000616125.4:c.703T>C;ENSP00000484643.1:p.Trp235Arg],[SAMD11;missense_variant;MED;ENST00000617307.4:c.787T>C;ENSP00000482090.1:p.Trp263Arg],[SAMD11;missense_variant;MED;ENST00000618181.4:c.652T>C;ENSP00000480870.1:p.Trp218Arg],[SAMD11;missense_variant;MED;ENST00000618323.4:c.632T>C;ENSP00000480678.1:p.Leu211Pro],[SAMD11;missense_variant;MED;ENST00000618779.4:c.841T>C;ENSP00000484256.1:p.Trp281Arg],[SAMD11;missense_variant;MED;ENST00000620200.4:c.347T>C;ENSP00000484820.1:p.Leu116Pro],[SAMD11;missense_variant;MED;ENST00000622503.4:c.1030T>C;ENSP00000482138.1:p.Trp344Arg],[SAMD11;synonymous_variant;LOW;NM_152486.3:c.1027T>C;NP_689699.2:p.Arg343%3D],[;regulatory_region_variant;LOW;;]	[NOC2L;synonymous_variant;LOW;ENST00000327044.7:c.1843C>T;ENSP00000317992.6:p.Leu615%3D],[SAMD11;downstream_gene_variant;LOW;;],[NOC2L;non_coding_transcript_exon_variant;LOW;ENST00000477976.5:n.3290C>T;],[NOC2L;non_coding_transcript_exon_variant;LOW;ENST00000483767.5:n.699C>T;],[NOC2L;upstream_gene_variant;LOW;;],[NOC2L;synonymous_variant;LOW;NM_015658.4:c.1843C>T;NP_056473.3:p.Leu615%3D]	[NOC2L;synonymous_variant;LOW;ENST00000327044.7:c.1182T>C;ENSP00000317992.6:p.Thr394%3D],[NOC2L;non_coding_transcript_exon_variant;LOW;ENST00000477976.5:n.2629T>C;],[NOC2L;downstream_gene_variant;LOW;;],[NOC2L;synonymous_variant;LOW;NM_015658.4:c.1182T>C;NP_056473.3:p.Thr394%3D]
+   163	VGeneID:1	ENSG00000187634	ENSG00000188976	ENSG00000188976
+   164	Gene_description	sterile_alpha_motif_domain_containing_11	NOC2_like_nucleolar_associated_transcriptional_repressor	NOC2_like_nucleolar_associated_transcriptional_repressor
+   165	OMIM	[616765;]	[610770;]	[610770;]
+   166	ORPHA	[;;]	[;;]	[;;]
+   167	NM			
